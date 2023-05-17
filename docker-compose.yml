@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  nodejs:
+    build: ./docker/nodejs/
+    ports:
+      - "3000:3000"
+    expose:
+      - 3000
+    tty: true
+    volumes:
+      - .:/var/www/
+    command: nodemon app/server.js | bunyan
+    depends_on:
+      - mysql
+  mysql:
+    build: ./docker/mysql/
+    ports:
+      - "3306:3306"
+    expose:
+      - 3306
+    command: --max_allowed_packet=32505856
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: developer
+      MYSQL_USER: developer
+      MYSQL_PASSWORD: developer
