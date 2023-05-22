@@ -4,13 +4,13 @@ services:
   nodejs:
     build: ./docker/nodejs/
     ports:
-      - "3000:3000"
+      - "1337:1337"
     expose:
-      - 3000
+      - 1337
     tty: true
     volumes:
       - .:/var/www/
-    command: nodemon app/server.js | bunyan
+    command: nodemon test-project/app.js | bunyan
     depends_on:
       - mysql
   mysql:
