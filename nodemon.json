@@ -1,6 +1,6 @@
 {
     "restartable": "rs",
-    "watch": ["app/server.js", "app/*", "nodemon.json"],
+    "watch": ["test-project/*", "nodemon.json"],
     "env": {
       "NODE_ENV": "development"
     }
