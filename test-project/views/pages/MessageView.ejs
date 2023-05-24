@@ -1,0 +1,29 @@
+<div id="message-view" v-cloak>
+  <div class="container-fluid pt-5 pb-5">
+  <h1>TODO: Implement this page.</h1>
+  <p>(See also <em>assets/styles/pages/MessageView.less</em>, <em>assets/js/pages/MessageView.page.js</em>, and <em>api/controllers/view-message-view.js</em>.)</p>
+
+  </div>
+
+  <div class="header">
+    <h2 class="title">Messages</h2>
+    <p class="intro">Testing this</p>
+    <hr>
+  </div>
+  <div class="body">
+    <h5 class="pb-2 mb-3 border-bottom">
+        <strong :class="[me.emailStatus === 'unconfirmed' || me.emailStatus === 'change-requested' ? 'text-muted' : '']">{{me.emailChangeCandidate ? me.emailChangeCandidate : me.emailAddress}}</strong>
+        <span v-if="me.emailStatus === 'unconfirmed' || me.emailStatus === 'change-requested'" class="badge badge-pill badge-warning">Unverified</span>
+    </h5>
+    <!--
+      <p>
+      <strong>{{me.message}}</strong>
+    </p>
+    <ul>
+  <% messages.forEach(function(message) { %>
+    <li><%= message.message %></li>
+  <% }); %>
+</ul>
+    --> 
+    
+</div>
